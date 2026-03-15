@@ -49,11 +49,11 @@
 
   .title {
     font-family: 'Press Start 2P', monospace;
-    font-size: clamp(18px, 4vw, 32px);
+    font-size: clamp(12px, 3vw, 20px);
     color: var(--neon-green);
     text-shadow: 0 0 10px var(--neon-green), 0 0 30px var(--neon-green), 0 0 60px rgba(0,255,136,0.3);
-    margin-bottom: 6px;
-    letter-spacing: 4px;
+    margin-bottom: 4px;
+    letter-spacing: 3px;
     animation: flicker 4s infinite;
   }
 
@@ -65,32 +65,32 @@
   }
 
   .subtitle {
-    font-size: 9px;
+    font-size: 7px;
     color: var(--neon-blue);
-    letter-spacing: 6px;
+    letter-spacing: 5px;
     text-transform: uppercase;
-    margin-bottom: 20px;
+    margin-bottom: 12px;
     opacity: 0.7;
   }
 
   .game-wrapper {
     display: flex;
-    gap: 20px;
+    gap: 12px;
     align-items: flex-start;
   }
 
   .side-panel {
-    width: 130px;
+    width: 90px;
     display: flex;
     flex-direction: column;
-    gap: 14px;
+    gap: 8px;
   }
 
   .panel-box {
     background: var(--panel);
     border: 1px solid rgba(0,255,136,0.2);
     border-radius: 8px;
-    padding: 12px;
+    padding: 8px;
     text-align: center;
     position: relative;
     overflow: hidden;
@@ -105,15 +105,15 @@
   }
 
   .panel-label {
-    font-size: 7px;
+    font-size: 6px;
     color: rgba(255,255,255,0.4);
     letter-spacing: 2px;
-    margin-bottom: 6px;
+    margin-bottom: 4px;
   }
 
   .panel-value {
     font-family: 'Press Start 2P', monospace;
-    font-size: 18px;
+    font-size: 13px;
     color: var(--neon-green);
     text-shadow: 0 0 10px var(--neon-green);
   }
@@ -292,7 +292,7 @@
 
   <!-- Canvas -->
   <div class="canvas-container">
-    <canvas id="gameCanvas" width="420" height="420"></canvas>
+    <canvas id="gameCanvas" width="300" height="300"></canvas>
 
     <!-- Start Overlay -->
     <div class="overlay" id="startOverlay">
@@ -351,7 +351,7 @@
 <script>
 const canvas = document.getElementById('gameCanvas');
 const ctx = canvas.getContext('2d');
-const COLS = 21, ROWS = 21;
+const COLS = 15, ROWS = 15;
 const CELL = canvas.width / COLS;
 
 let snake, dir, nextDir, food, score, best, level, gameLoop, running, paused, frame;
@@ -368,7 +368,7 @@ let currentFood = FOODS[0];
 const SPEEDS = [150, 130, 110, 90, 70, 55, 40];
 
 function init() {
-  snake = [{x:10,y:10},{x:9,y:10},{x:8,y:10}];
+  snake = [{x:7,y:7},{x:6,y:7},{x:5,y:7}];
   dir = {x:1,y:0};
   nextDir = {x:1,y:0};
   score = 0;
